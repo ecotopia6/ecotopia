@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JOIN US</title>
+	<link rel="shortcut icon" href="images/earth.png" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+	<style>
+	.container{
+				padding-left:50px;
+				width:80%;
+			}
+			.image{
+				text-align: center;
+				width:100px;
+				height:80px;
+				margin-top: 50px;
+			}
+				h1{
+				text-align: center;
+				color: red;
+				font-size: 35px;
+			}
+			body{
+				margin:0;
+				padding:0;
+				font-family:sans-serif;
+				font-size: 19px;
+				background-color: #f8ecec;
+			}
+			@media all and (max-width: 1000px){
+				body{
+					font-size: 17px;
+				}
+			}
+			@media all and (max-width: 670px){
+				body{
+					font-size: 17px;
+				}
+			}
+.button2 {
+  background-color: #187464;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 15px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  float: right;
+}
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  color: #f8ecec;
+}
+
+
+  section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 60px;
+}
+.contact {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 0px 20px #00000010;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.form-group {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 5px;
+  font-size: 18px;
+  border: 1px solid rgba(128, 128, 128, 0.199);
+  margin-top: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+button[type="submit"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 8px;
+  font-family: "Montserrat";
+  color: rgb(27, 166, 247);
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease background-color;
+}
+button[type="submit"]:hover {
+  background-color: rgb(214, 226, 236);
+}
+#status {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+#status.success {
+  background-color: rgb(211, 250, 153);
+  animation: status 4s ease forwards;
+}
+#status.error {
+  background-color: rgb(250, 129, 92);
+  color: white;
+  animation: status 4s ease forwards;
+}
+@keyframes status {
+  0% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  90% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+h1{
+    text-align: center;
+    color: red;
+    font-size: 35px;
+}
+	</style>
+
+</head>
+<body>
+
+    <a href="index.html"><button class="button2"><i class="material-icons">home</i></button></a>
+	<div style="border: 5px inset #28c9ac; height: 800px; width: 98%; border-radius: 15px; margin-top: 10px; margin-left: 4.5px;">	
+	<div class="text"><h1><em><b><u><font color="blue" size="5">Join Us</font></u></b></em></h1></div>
+  <section>
+  <div class="contact">
+    <form action="https://formspree.io/f/myyozylr" method="POST" id="my-form">
+
+      <div class="form-group">
+        <label for="Name">Full Name</label>
+        <input type="text" id="Name" name="Name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+      </div>
+
+      <div class="form-group">
+        <label for="Do you like our website">Do you like our website?</label>
+        <input type="text" id="Like" name="Like">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="5"></textarea>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div id="status"></div>
+</section>
+<script type="text/javascript">
+  window.addEventListener("DOMContentLoaded", function () {
+  // get the form elements defined in your form HTML above
+
+  var form = document.getElementById("my-form");
+  // var button = document.getElementById("my-form-button");
+  var status = document.getElementById("status");
+
+  // Success and Error functions for after the form is submitted
+
+  function success() {
+    form.reset();
+    status.classList.add("success");
+    status.innerHTML = "Thanks!";
+  }
+
+  function error() {
+    status.classList.add("error");
+    status.innerHTML = "Oops! There was a problem.";
+  }
+
+  // handle the form submission event
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
+  });
+});
+
+// helper function for sending an AJAX request
+
+function ajax(method, url, data, success, error) {
+  var xhr = new XMLHttpRequest();
+  xhr.open(method, url);
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+    if (xhr.status === 200) {
+      success(xhr.response, xhr.responseType);
+    } else {
+      error(xhr.status, xhr.response, xhr.responseType);
+    }
+  };
+  xhr.send(data);
+}
+</script>
+	</div>
+
+	<div style="border: 5px inset #28c9ac; height: 600px; width: 98%; border-radius: 15px; margin-top: 10px; margin-left: 4.5px;">
+		<div class="container">
+		<div class="image"><img src="images/join us.jpeg" width="400" height="500" style="margin-left: 250px;"></div>
+	    </div>
+	    </div>
+
+	<style type="text/css">
+  footer {
+    background: #28c9ac;
+    padding: 10px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer .social {
+  text-align:center;
+}
+
+footer .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  color:black;
+  opacity:0.75;
+}
+
+footer .social > a:hover {
+  opacity:0.9;
+  color: blue;
+}
+footer span{
+	color: black;
+}
+  </style>
+    <br><footer>
+        <span>Created By Hiren Jain with❤️| <i class="far fa-copyright"></i> 2022 Ecotopia. All rights reserved.</span><br>
+        <footer>
+            <div class="social"><a target="_blank" href="https://www.instagram.com/eco._.topia9/"><i class="fab fa-instagram"></i></a><a target="_blank" href="https://www.youtube.com/channel/UCtouDJwZ4DxEzSzzFVg7TXA"><i class="fab fa-youtube"></i></a><a target="_blank" href="https://twitter.com/Ecotopia18"><i class="fab fa-twitter"></i></a><a target="_blank" href="https://www.facebook.com/profile.php?id=100068687828989"><i class="fab fa-facebook"></i></a><a target="_blank" href="mailto: greenconsumer6@gmail.com"><i class="material-icons">email</i></a></div>
+        </footer>
+
+</body>
+</html>
